@@ -112,8 +112,8 @@ function Base.tryparse(::Type{Dioid{⨁, ⨀, T}}, str::AbstractString) where {�
     return Dioid{⨁, ⨀}(x)
 end
 
-function Base.convert(::Type{Dioid{⨁,⨀,T}}, x::Dioid{⨁,⨀,S}) where {⨁,⨀,T,S}
-    return Dioid{⨁,⨀}(convert(T, x.data))
+function Base.convert(::Type{Dioid{⊞, ⊡, T}}, x::Dioid{⨁, ⨀, S}) where {⊞,⊡,T, ⨁,⨀,S}
+    return Dioid{⊞, ⊡, T}(x.data)
 end
 
 
