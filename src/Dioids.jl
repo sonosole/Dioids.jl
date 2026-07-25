@@ -53,16 +53,16 @@ export ⊙
 export ⨸
 
 # special symbols
-export Strinf
+export Strinf, s∞
 export SVec
 export inact
 export inverse
 
 # binary operations
-export logadd
-export nlogadd
-export lcprefix
-export lcsuffix
+export  logadd, smoothmax
+export nlogadd, smoothmin
+export lcprefix, deprefix
+export lcsuffix, desuffix
 
 # some properties
 export iszeroclosed, is0closed

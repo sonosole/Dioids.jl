@@ -1,7 +1,7 @@
 """
     logadd(a <: Real, b <: Real)
 
-calculate (a,b) -> log(eᵃ + eᵇ), is a soft version of max(a,b)
+Calculate (a,b) -> log(eᵃ + eᵇ), is a soft version of `max(a,b)`
 """
 function logadd(a::Ta, b::Tb) where {Ta <: Real, Tb <: Real}
     T = promote_type(Ta, Tb)
@@ -19,9 +19,17 @@ end
 """
     nlogadd(a <: Real, b <: Real)
 
-calculate (a,b) -> - log(e⁻ᵃ + e⁻ᵇ), is a soft version of min(a,b)
+Calculate (a,b) -> - log(e⁻ᵃ + e⁻ᵇ), is a soft version of `min(a,b)`
 """
 function nlogadd(a::Ta, b::Tb) where {Ta <: Real, Tb <: Real}
     return - logadd(-a, -b)
 end
 
+
+#=
+x = randn()
+y = randn()
+smoothmax(x,y) + smoothmin(x,y) == x + y is true
+=#
+const smoothmax =  logadd
+const smoothmin = nlogadd

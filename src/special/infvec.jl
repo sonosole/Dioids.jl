@@ -43,37 +43,4 @@ function Base.:*(x::SVec{T}, y::SVec{T}) where T
     return SVec{T}(append!(x.data, y.data), false)
 end
 
-"""
-    lcprefix(x::T, y::T) where T <: AbstractVector
-
-Return the longest common prefix between `x` and `y`.
-"""
-function lcprefix(x::T, y::T) where T <: AbstractVector
-    offset = 0  # offset from 1st index
-    n = min(length(x), length(y))
-    for i = 1:n
-        !isequal(x[i], y[i]) && break
-        offset = i
-    end
-    return x[1 : offset]
-end
-
-
-
-"""
-    lcsuffix(x::T, y::T) where T <: AbstractVector
-
-Return the longest common suffix between `x` and `y`.
-"""
-function lcsuffix(x::T, y::T) where T <: AbstractVector
-    offset = 0   # offset from last index
-    lx = length(x)
-    ly = length(y)
-    n  = min(lx, ly)
-    while offset < n
-        !isequal(x[lx-offset], y[ly-offset]) && break
-        offset += 1
-    end
-    return x[lx-offset+1 : lx]
-end
 

@@ -41,6 +41,10 @@ end
 end
 
 
+@inline function value(x::T) where T <: Real
+    return x
+end
+
 # easy shows
 global MARK = "ᵧ" 
 
