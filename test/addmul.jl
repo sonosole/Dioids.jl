@@ -43,17 +43,6 @@
         @test a*b == Dioid{⨁,⨀}(⨀(α,β))
     end
 
-    # fs = [lcprefix, *, lcsuffix]
-    # for ⨁ ∈ fs, ⨀ ∈ fs
-    #     ⨁ == ⨀ && continue
-    #     α = SVec([1,0,10])
-    #     β = SVec([1, 10])
-    #     a = Dioid{⨁,⨀}(α)
-    #     b = Dioid{⨁,⨀}(β)
-    #     @test a+b == Dioid{⨁,⨀}(⨁(α,β))
-    #     @test a*b == Dioid{⨁,⨀}(⨀(α,β))
-    # end
-
     begin
         α = (rand(), randn())
         β = (rand(), randn())
