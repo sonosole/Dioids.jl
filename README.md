@@ -1,3 +1,6 @@
+![GitHub Created At](https://img.shields.io/github/created-at/sonosole/Dioids.jl?color=%233F6184) ![GitHub Release Date](https://img.shields.io/github/release-date/sonosole/Dioids.jl?color=%232684FC) ![GitHub Tag](https://img.shields.io/github/v/tag/sonosole/Dioids.jl?sort=date&color=%230288D1) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/sonosole/Dioids.jl) ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/sonosole/Dioids.jl/total?color=%23E60012) [![Hits](https://hits.dwyl.com/sonosole/Dioids.jl.svg)](https://hits.dwyl.com/sonosole/Dioids.jl)
+![GitHub License](https://img.shields.io/github/license/sonosole/Dioids.jl?style=flat&logoColor=%23003A9A&color=%239558B2) ![Static Badge](https://img.shields.io/badge/Julia-v1%2B-%239558B2?logo=julia&link=https%3A%2F%2Fjulialang.org) ![Static Badge](https://img.shields.io/badge/email-sonosole%40163.com-%239558B2?logo=gmail)
+
 # 1. Package Installation 💾
 
 ```julia
