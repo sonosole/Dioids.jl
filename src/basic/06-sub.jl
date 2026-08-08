@@ -54,7 +54,7 @@ julia> 1 - Dioid{max, logadd}(5)
 ERROR: MethodError: no method matching -(::Int64, ::Dioid{max, logadd, Int64})
 ```
 """
-⊖(x::Dioid, y::Dioid) = x - y
-⊖(x::Dioid, y::Number)    = x - y
-⊖(x::Number,    y::Dioid) = x - y
+⊖(x::Dioid, y::Dioid)  = x - y
+⊖(x::Dioid, y::Number) = x - y
+⊖(x::Number, y::Dioid) = x - y
 ⊖(x::Dioid) = - x

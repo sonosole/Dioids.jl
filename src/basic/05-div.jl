@@ -54,11 +54,11 @@ julia> 1.0 / Dioid{+, min}(5.0)
 ERROR: MethodError: no method matching div(::Float64, ::Dioid{+, min, Float64}, ::RoundingMode{:ToZero})
 ```
 """
-⨸(x::Dioid, y::Dioid) = div(x, y)
-⨸(x::Dioid, y::Number)    = div(x, y)
-⨸(x::Number,    y::Dioid) = div(x, y)
+⨸(x::Dioid,  y::Dioid)  = div(x, y)
+⨸(x::Dioid,  y::Number) = div(x, y)
+⨸(x::Number, y::Dioid)  = div(x, y)
 
 
-Base.:/(x::Dioid, y::Dioid) = div(x, y)
-Base.:/(x::Dioid, y::Number)    = div(x, y)
-Base.:/(x::Number,    y::Dioid) = div(x, y)
+Base.:/(x::Dioid,  y::Dioid)  = div(x, y)
+Base.:/(x::Dioid,  y::Number) = div(x, y)
+Base.:/(x::Number, y::Dioid)  = div(x, y)
