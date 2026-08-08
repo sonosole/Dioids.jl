@@ -31,5 +31,13 @@ x = randn()
 y = randn()
 smoothmax(x,y) + smoothmin(x,y) == x + y is true
 =#
+"""
+Alias of `logadd` which calculates (a,b) -> log(eᵃ + eᵇ)
+"""
 const smoothmax =  logadd
+
+
+"""
+Alias of `nlogadd` which calculates (a,b) -> - log(e⁻ᵃ + e⁻ᵇ)
+"""
 const smoothmin = nlogadd
