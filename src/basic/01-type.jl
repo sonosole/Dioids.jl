@@ -46,7 +46,7 @@ end
 end
 
 # easy shows
-global MARK = "ᵧ" 
+global MARK = "" 
 
 function setmark(s::String)
     global MARK

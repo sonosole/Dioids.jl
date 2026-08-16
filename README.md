@@ -5,7 +5,7 @@
 
 ```julia
 using Pkg
-Pkg.add("Dioids") # if registered, other wise use this repo's url as input
+Pkg.add("Dioids") # use this repo's url for latest version
 ```
 
 # 2. Customized Semirings 🛠️
@@ -33,6 +33,7 @@ $$
     a + b := f_+(a, b)\\
     a × b := f_×(a, b)
 \end{align*}
+
 $$
 
 where $f_+$ and $f_×$ are **user-defined binary functions**. Thus, programmatically we can assert
@@ -45,6 +46,8 @@ Dioid{f₊,fₓ}(a) * Dioid{f₊,fₓ}(b) == Dioid{f₊,fₓ}( fₓ(a,b) )
 For example, defining `+` as `min` at the addtion position and `*` as `+` at the multiplication position, leads to interesting results:
 
 ```julia
+julia> setmark("ᵧ"); # to make a difference from normal number, defaults to ""
+
 julia> Dioid{min,+}(2) + Dioid{min,+}(5)
 2ᵧ
 
@@ -330,6 +333,7 @@ In the context of semiring, matrix multiplication corresponds to composition of 
 
 $$
 C_{ij} = ⨁_{k} A_{ik} ⊗B_{kj}\\
+
 $$
 
 Multiplication between `Dioid{max, min, Int}` matrices.
