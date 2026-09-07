@@ -150,6 +150,12 @@ function Base.:(==)(x::Dioid{⨁, ⨀, Tx},
 end
 
 
+function Base.:isless(x::Dioid{⨁, ⨀, Tx},
+                   y::Dioid{⨁, ⨀, Ty}) where {⨁, ⨀, Tx, Ty}
+    return isless(ᵛ(x), ᵛ(y))
+end
+
+
 function Base.:(<)(x::Dioid{⨁, ⨀, Tx},
                    y::Dioid{⨁, ⨀, Ty}) where {⨁, ⨀, Tx, Ty}
     return ᵛ(x) < ᵛ(y)
