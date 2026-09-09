@@ -14,10 +14,20 @@
 end
 
 
+import Dioids._smoothmax
+import Dioids._smoothmin
+
 @testset "MaxMin: soft vs hard" begin
-    x = rand()
-    y = rand()
+    x = rand(Int)/10
+    y = rand(Int)/10
     sxy = smoothmax(x,y) + smoothmin(x,y)
-    hxy = x + y
-    @test isapprox(sxy, hxy, atol=1e-5)
-end
+    @test isapprox(sxy, x + y, atol=1e-5)
+
+    _sxy = _smoothmax(x,y) + _smoothmin(x,y)
+    @test isapprox(sxy, _sxy, rtol=1e-5)
+
+    A = rand(Int, 32, 32) ./ 10
+    B = rand(Int, 32, 32) ./ 10
+    @test all(@. isapprox(smoothmax(A,B), _smoothmax(A,B), rtol=1e-5))
+    @test all(@. isapprox(smoothmin(A,B), _smoothmin(A,B), rtol=1e-5))
+end;

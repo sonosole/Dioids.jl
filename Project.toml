@@ -1,7 +1,7 @@
 name = "Dioids"
 uuid = "899709ea-2d94-454e-b877-571333ff5bfa"
 authors = ["Sole sonosole@163.com>"]
-version = "0.1.4"
+version = "0.1.5"
 
 
 [compat]
